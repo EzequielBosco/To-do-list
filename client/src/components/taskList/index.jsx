@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { TaskCard } from '../taskCard'
+import "./taskList.css"
 
 function TaskList() {
   const [tasks, setTasks] = useState([])
@@ -12,7 +13,7 @@ function TaskList() {
   }, [])
 
   return (
-    <div>
+    <div className='task-list'>
       {tasks.map((task) => (
         <TaskCard 
           key={task._id} 

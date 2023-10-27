@@ -1,7 +1,7 @@
-const home = require('../controller/home')
+const api = require('../controller/api')
 
 const router = app => {
-    app.use('/home', home)
+    app.use('/api', api)
 }
 
 module.exports = router

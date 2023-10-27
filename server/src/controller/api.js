@@ -3,7 +3,9 @@ const { Router } = require('express')
 const router = Router()
 
 router.get('/', (req, res) => {
-    res.json({ message: 'hello server' })
+    console.log('Solicitud recibida en /api')
+    const data = { users: ["user1", "user2", "user3"] }
+    res.json(data)
 })
 
 module.exports = router

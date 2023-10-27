@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import TaskList from './components/taskList'
 // import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             ))}
           </ul>
         )}
+        <TaskList />
     </>
   )
 }

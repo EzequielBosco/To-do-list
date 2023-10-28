@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#logo {
+    height: 50px;
+}
+
+.search {
+    border-radius: 10px;
+}

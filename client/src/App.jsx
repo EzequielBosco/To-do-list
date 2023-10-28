@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import TaskList from './components/taskList'
+import Footer from './layout/footer'
+import Navbar from './layout/navbar'
 // import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <p>Hello client</p>
         {backendData.users.length === 0 ? (
           <p>Loading...</p>
@@ -33,6 +36,7 @@ function App() {
           </ul>
         )}
         <TaskList />
+        <Footer />
     </>
   )
 }

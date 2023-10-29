@@ -37,7 +37,6 @@ router.put('/:id', async (req, res) => {
         const taskId = req.params.id
         const { title, description, completed, dueDate } = req.body
         const updatedTask = await Task.findByIdAndUpdate(taskId, { title, description, completed, dueDate }, { new: true })
-    
         res.json(updatedTask)
 
     } catch (error) {

@@ -30,8 +30,10 @@ const TaskCard = ({ id, title, description, dueDate, createdAt }) => {
       <h3 className="card-title">{title}</h3>
       <p className="card-description">{description}</p>
       <hr />
-      <span className="card-completed">Estado: { isCompleted ? "Completada" : "Pendiente" } </span>
-      <input type="checkbox" onChange={toggleTaskCompletion} checked={isCompleted}/>
+      <div id="state">
+        <span className="card-completed">Estado: { isCompleted ? "Completada" : "Pendiente" } </span>
+        <input type="checkbox" onChange={toggleTaskCompletion} checked={isCompleted}/>
+      </div>
       <hr />
       <small className="card-date">Vence en {dueDate} </small>
       <small className="card-date">Creada el {createdAt} </small>

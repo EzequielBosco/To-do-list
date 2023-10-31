@@ -11,13 +11,6 @@ nav {
     gap: 20px;
 }
 
-input {
-    display: flex;
-    align-items: center;
-    border: none;
-    position: relative;
-}
-
 .search {
     color: white;
     border-radius: 8px;
@@ -35,13 +28,27 @@ input {
 
 .search-box input {
     padding-left: 45px;
+    display: flex;
+    align-items: center;
+    border: none;
+    position: relative;
+    outline: none;
 }
 
 input::placeholder {
     color: white;
 }
 
-input:active {
+input:focus {
     background-color: white;
     border: none;
+    color: var(--color-grey);
+}
+
+input:focus::placeholder {
+    color: black;
+}
+
+.svg  {
+    color: black;
 }

@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import TaskList from './components/taskList'
 import Footer from './layout/footer'
 import Navbar from './layout/navbar'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
+import { Home } from './pages/home'
+import { PageTaskDetail } from './pages/PageTaskDetail'
 
 function App() {
   return (
@@ -22,7 +22,8 @@ function App() {
       />
       <Navbar />
         <Routes>
-          <Route path='/' element={<TaskList />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/:id' element={<PageTaskDetail />} />
         </Routes>
       <Footer />
     </BrowserRouter>

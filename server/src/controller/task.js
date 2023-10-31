@@ -15,6 +15,18 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id', async (req, res) => {
+    try {
+        const task = await Task.findById(req.params.id)
+        
+        if(!task) return res.status(404).json({ error: 'Error, no se encontró la tarea' })
+        res.json(task)
+
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener la tarea' })
+    }
+})
+
 router.post('/', async (req, res) => {
     try {
         const { title, description, dueDate } = req.body

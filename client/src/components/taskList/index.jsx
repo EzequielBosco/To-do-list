@@ -16,6 +16,7 @@ function TaskList() {
     <div className='task-list'>
       {tasks.map((task) => (
         <TaskCard 
+          className="task-card"
           key={task._id} 
           id={task._id}
           title={task.title}
@@ -23,6 +24,7 @@ function TaskList() {
           completed={task.completed}
           dueDate={task.dueDate}
           createdAt={task.createdAt} 
+          textButton="Ver más"
         />
       ))}
     </div>

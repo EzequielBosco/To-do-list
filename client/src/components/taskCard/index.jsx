@@ -1,8 +1,10 @@
 import { useContext, useState } from "react"
 import { TaskContext } from "../../context"
 import "./taskCard.css"
+import { Link } from "react-router-dom"
+import { Button } from "../common/button"
 
-const TaskCard = ({ id, title, description, dueDate, createdAt }) => {
+const TaskCard = ({ id, className, title, description, dueDate, createdAt, textButton }) => {
   const { taskData, updateTaskCompletion } = useContext(TaskContext)
 
   const [isCompleted, setIsCompleted] = useState(taskData.find(task => task._id === id)?.completed || false)
@@ -26,7 +28,7 @@ const TaskCard = ({ id, title, description, dueDate, createdAt }) => {
   }
 
   return (
-    <div className="task-card">
+    <div className={className}>
       <h3 className="card-title">{title}</h3>
       <p className="card-description">{description}</p>
       <hr />
@@ -37,6 +39,7 @@ const TaskCard = ({ id, title, description, dueDate, createdAt }) => {
       <hr />
       <small className="card-date">Vence en {dueDate} </small>
       <small className="card-date">Creada el {createdAt} </small>
+      <Link to={`/${id}`}><Button className="btn" type="submit">{textButton}</Button></Link>
     </div>
   )
 }

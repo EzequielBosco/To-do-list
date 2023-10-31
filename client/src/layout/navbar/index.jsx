@@ -21,10 +21,10 @@ function Navbar() {
       if (data.message === "No se encontraron tareas para eliminar") {
         notifyError(data.message);
       } else {
-        notifySuccess("Todas las tareas eliminadas correctamente.");
+        notifySuccess("Todas las tareas eliminadas correctamente.")
       }
     })
-    .catch(error => console.error('Error al eliminar las tareas', error));
+    .catch(error => console.error('Error al eliminar las tareas', error))
   }
 
   return (

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { TaskContext } from "../../context"
 import "./taskCard.css"
 import { Link } from "react-router-dom"
@@ -7,7 +7,16 @@ import { Button } from "../common/button"
 const TaskCard = ({ id, className, title, description, dueDate, createdAt, textButton }) => {
   const { taskData, updateTaskCompletion } = useContext(TaskContext)
 
-  const [isCompleted, setIsCompleted] = useState(taskData.find(task => task._id === id)?.completed || false)
+  const [isCompleted, setIsCompleted] = useState(false)
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/task/${id}`)
+    .then(response => response.json())
+    .then(data => {
+      setIsCompleted(data.completed)
+    })
+    .catch(error => console.error('Error al obtener el estado de la tarea', error))
+  }, [])
 
   const toggleTaskCompletion = () => {
     const newIsCompleted = !isCompleted

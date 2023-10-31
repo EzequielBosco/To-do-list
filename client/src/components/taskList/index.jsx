@@ -5,6 +5,7 @@ import "./taskList.css"
 function TaskList() {
   const [tasks, setTasks] = useState([])
 
+  // get tasks
   useEffect(() => {
     fetch('http://localhost:3000/task')
       .then((response) => response.json())

@@ -20,10 +20,10 @@ function App() {
         pauseOnHover
         theme="light"
       />
-      <Navbar />
+      {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/:id' element={<PageTaskDetail />} />
+          <Route index path='/:id' element={<PageTaskDetail />} />
         </Routes>
       <Footer />
     </BrowserRouter>

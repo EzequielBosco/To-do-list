@@ -5,11 +5,13 @@ import './taskCardDetail.css'
 import { Button } from "../common/button"
 import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import Navbar from "../../layout/navbar"
 
 const TaskListDetail = () => {
   const [task, setTask] = useState({})
   const { id } = useParams()
 
+  // get task
   useEffect(() => {
     fetch(`http://localhost:3000/task/${id}`)
       .then(response => response.json())
@@ -20,6 +22,7 @@ const TaskListDetail = () => {
   const notifySuccess = (message) => toast.success(message)
   const notifyError = (message) => toast.error(message)
 
+  // delete task
   const handleDelete = () => {
     fetch(`http://localhost:3000/task/${id}`, {
       method: 'DELETE',
@@ -40,8 +43,9 @@ const TaskListDetail = () => {
   }
 
   return ( 
-    <main id="main-detail">
-      <div className="div-detail">
+    <>
+    <Navbar id={id} />
+      <main className="main-detail">
         <TaskCard 
           id={id}
           className="task-card-detail"
@@ -56,8 +60,8 @@ const TaskListDetail = () => {
           <Button className="btn" children="Editar tarea"></Button>
           <Button className="btn" children="Eliminar tarea" onClick={handleDelete}></Button>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   )
 }
 

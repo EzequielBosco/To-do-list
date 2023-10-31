@@ -9,6 +9,7 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
 
   const [isCompleted, setIsCompleted] = useState(false)
 
+  // get state completed (checkbox)
   useEffect(() => {
     fetch(`http://localhost:3000/task/${id}`)
     .then(response => response.json())
@@ -18,6 +19,7 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
     .catch(error => console.error('Error al obtener el estado de la tarea', error))
   }, [])
 
+  // change completed
   const toggleTaskCompletion = () => {
     const newIsCompleted = !isCompleted
 
@@ -42,7 +44,7 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
       <p className="card-description">{description}</p>
       <hr />
       <div id="state">
-        <span className="card-completed">Estado: { isCompleted ? "Completada" : "Pendiente" } </span>
+        <span className="card-completed">{ isCompleted ? "Completada" : "Pendiente" } </span>
         <input type="checkbox" onChange={toggleTaskCompletion} checked={isCompleted}/>
       </div>
       <hr />

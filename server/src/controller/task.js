@@ -6,6 +6,7 @@ const router = Router()
 router.get('/', async (req, res) => {
     try {
         const tasks = await Task.find()
+        
         if(!tasks) return res.status(404).json({ error: 'Error, no se encontraron tareas' })
         res.json(tasks)
 
@@ -55,10 +56,12 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
-router.delete('/delete', async (req, res) => {
+router.delete('/', async (req, res) => {
     try {
-        const result = await Task.deleteMany({})
-        if (result.deletedCount > 0) {
+        const count = await Task.countDocuments({})
+
+        if (count > 0) {
+            await Task.deleteMany({})
             res.json({ message: 'Todas las tareas eliminadas correctamente' })
         } else {
             res.json({ message: 'No se encontraron tareas para eliminar' })

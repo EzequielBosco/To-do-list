@@ -21,9 +21,7 @@ function TaskList() {
           key={task._id} 
           id={task._id}
           title={task.title}
-          description={task.description}
           completed={task.completed}
-          dueDate={task.dueDate}
           createdAt={task.createdAt} 
           textButton="Ver más"
         />

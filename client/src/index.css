@@ -1,11 +1,12 @@
 :root {
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
   font-family: 'Roboto', sans-serif;
   --color: rgb(255, 186, 0);
   --color-1: rgba(255, 187, 0, 0.863);
+  --color-white: rgba(241, 241, 241, 0.87);
   --color-grey: rgb(82, 83, 85);
+  --color-grey-1: rgba(182, 185, 185, 0.144);
   --color-hr: rgb(135, 135, 136);
+  --color-back: #242424;
 }
 
 hr {
@@ -27,12 +28,14 @@ a:active {
 }
 
 body {
+  background-color: var(--color-back);
   position: relative;
   margin: 0;
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
   padding-bottom: 3rem;
+  color: var(--color-white);
 }
 
 h1 {

@@ -38,18 +38,21 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
     .catch(error => console.error('Error al actualizar el estado de la tarea', error))
   }
 
+  const formattedCreatedAt = new Date(createdAt).toLocaleDateString()
+  const formattedDueDate = new Date(dueDate).toLocaleDateString()
+
   return (
     <div className={className}>
       <h3 className="card-title">{title}</h3>
-      <p className="card-description">{description}</p>
+      {description && <p className="card-description">{description}</p>}
       <hr />
       <div id="state">
         <span className="card-completed">{ isCompleted ? "Completada" : "Pendiente" } </span>
         <input type="checkbox" onChange={toggleTaskCompletion} checked={isCompleted}/>
       </div>
       <hr />
-      <small className="card-date">Vence en {dueDate} </small>
-      <small className="card-date">Creada el {createdAt} </small>
+      {dueDate && <small className="card-date">Vence el {formattedDueDate} </small>}
+      <small className="card-date">Fecha de creación {formattedCreatedAt} </small>
       <Link to={`/${id}`}><Button className="btn" type="submit">{textButton}</Button></Link>
     </div>
   )

@@ -27,7 +27,13 @@ nav {
     position: absolute;
     z-index: 1100;
     margin-top: 10px;
-    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.search-box svg:hover {
+    background-color: var(--color-grey-1);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px var(--color-grey-1)
 }
 
 .search-box input {
@@ -37,6 +43,10 @@ nav {
     border: none;
     position: relative;
     outline: none;
+}
+
+#search-btn {
+    cursor: pointer;
 }
 
 input::placeholder {
@@ -54,5 +64,13 @@ input:focus::placeholder {
 }
 
 .svg  {
-    color: black;
+    color: rgb(184, 184, 184);
+}
+
+#reload {
+    transition: transform 0.15s ease-in-out;
+}
+
+#reload:active {
+    transform: rotate(100deg)
 }

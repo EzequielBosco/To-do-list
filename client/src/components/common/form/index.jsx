@@ -11,7 +11,7 @@ function FormTask() {
 
   // create task
   const handleCreate = (data) => {
-    fetch('http://localhost:3000/task', {
+    fetch('https://do-keep-api.onrender.com/task', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -13,7 +13,7 @@ const TaskListDetail = () => {
 
   // get task
   useEffect(() => {
-    fetch(`http://localhost:3000/task/${id}`)
+    fetch(`https://do-keep-api.onrender.com/task/${id}`)
       .then(response => response.json())
       .then(data => setTask(data))
       .catch(error => console.error('Error al obtener la tarea', error))
@@ -24,7 +24,7 @@ const TaskListDetail = () => {
 
   // delete task
   const handleDelete = () => {
-    fetch(`http://localhost:3000/task/${id}`, {
+    fetch(`https://do-keep-api.onrender.com/task/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

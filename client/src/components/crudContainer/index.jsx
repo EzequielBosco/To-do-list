@@ -10,7 +10,7 @@ const CrudContainer = () => {
 
   // delete all tasks
   const handleDelete = () => {
-    fetch('http://localhost:3000/task', {
+    fetch('https://do-keep-api.onrender.com/task', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

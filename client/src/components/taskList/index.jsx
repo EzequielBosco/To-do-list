@@ -7,7 +7,7 @@ function TaskList() {
 
   // get tasks
   useEffect(() => {
-    fetch('http://localhost:3000/task')
+    fetch('https://do-keep-api.onrender.com/task')
       .then((response) => response.json())
       .then((data) => setTasks(data))
       .catch((error) => console.error('Error al obtener las tareas', error))

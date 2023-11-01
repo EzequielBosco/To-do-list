@@ -11,7 +11,7 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
 
   // get state completed (checkbox)
   useEffect(() => {
-    fetch(`http://localhost:3000/task/${id}`)
+    fetch(`https://do-keep-api.onrender.com/task/${id}`)
     .then(response => response.json())
     .then(data => {
       setIsCompleted(data.completed)
@@ -26,7 +26,7 @@ const TaskCard = ({ id, className, title, description, dueDate, createdAt, textB
     setIsCompleted(newIsCompleted)
     updateTaskCompletion(id, newIsCompleted)
     
-    fetch(`http://localhost:3000/task/${id}`, {
+    fetch(`https://do-keep-api.onrender.com/task/${id}`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',

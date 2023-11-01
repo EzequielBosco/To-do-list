@@ -1,5 +1,5 @@
 import Footer from './layout/footer'
-import Navbar from './layout/navbar'
+// import Navbar from './layout/navbar'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import { Home } from './pages/home'

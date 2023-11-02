@@ -25,8 +25,16 @@
     outline: none;
 }
 
+.form-task .textos {
+    width: 200px;
+}
+
 .form-task input::placeholder {
     color: var(--color-white);
+}
+
+.form-task input:focus::placeholder {
+    color: var(--color-grey);
 }
 
 .form-task input:focus {
@@ -50,4 +58,51 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.form-update {
+    font-size: 18px;
+    border-radius: 8px;
+    border: 0.4px solid #8a8a8a;
+    background-color: #2c2c2c;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 25px;
+    gap: 25px;
+    box-shadow: 2px 2px 2px 0px rgba(255, 255, 255, 0.603);
+}
+
+.form-update input {
+    background-color: #2c2c2c;
+    color: white;
+    display: flex;
+    align-items: center;
+    border: none;
+    position: relative;
+    outline: none;
+    font-size: 18px;
+}
+
+.form-update .textos {
+    width: 300px;
+}
+
+.form-update input::placeholder {
+    color: var(--color-white);
+}
+
+.form-update input:focus::placeholder {
+    color: var(--color-grey);
+}
+
+.form-update input:focus {
+    border: none;
+    background-color: #2c2c2c;
+    color: white;
+}
+
+.form-update hr {
+    width: 100%;
 }

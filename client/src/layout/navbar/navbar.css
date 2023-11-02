@@ -59,7 +59,7 @@ input:focus {
     color: var(--color-grey);
 }
 
-input:focus::placeholder {
+.search-box input:focus::placeholder {
     color: black;
 }
 
@@ -69,6 +69,7 @@ input:focus::placeholder {
 
 #reload {
     transition: transform 0.15s ease-in-out;
+    cursor: pointer;
 }
 
 #reload:active {

@@ -1,14 +1,21 @@
+import { useState } from "react"
 import CrudContainer from "../../components/crudContainer"
 import TaskList from "../../components/taskList"
 import Navbar from "../../layout/navbar"
 
 const Home = () => {
+  const [searchResults, setSearchResults] = useState([])
+
+  const handleSearch = (results) => {
+    setSearchResults(results)
+  }
+
   return (
     <>
-    <Navbar />
+    <Navbar onSearch={handleSearch}/>
       <main>
         <CrudContainer />
-        <TaskList />
+        <TaskList searchResults={searchResults}/>
       </main>
     </>
   )

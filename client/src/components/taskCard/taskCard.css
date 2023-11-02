@@ -31,3 +31,28 @@
 .task-card button {
     margin-top: 10px;
 }
+
+input[type="checkbox"]:not(:checked) {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #555; 
+    border-radius: 3px; 
+    outline: none; 
+    background-color: var(--color);
+    cursor: pointer;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    margin: 1.5px;
+}
+input[type="checkbox"]:checked {
+	background-color: var(--color); 
+    border: 1px solid  var(--color);
+}
+
+#state {
+    display: flex;
+    gap: 15px;
+}

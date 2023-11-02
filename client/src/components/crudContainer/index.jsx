@@ -10,6 +10,7 @@ const CrudContainer = () => {
 
   // delete all tasks
   const handleDelete = () => {
+    // fetch('http://localhost:3000/task', {
     fetch('https://do-keep-api.onrender.com/task', {
       method: 'DELETE',
       headers: {
@@ -23,6 +24,7 @@ const CrudContainer = () => {
       } else {
         notifySuccess("Todas las tareas eliminadas correctamente.")
       }
+      setTimeout(() => {window.location.href = "/"}, 2500)
     })
     .catch(error => console.error('Error al eliminar las tareas', error))
   }

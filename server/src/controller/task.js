@@ -5,9 +5,18 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     try {
-        const tasks = await Task.find()
+        const { title } = req.query
+
+        let tasks
+
+        if (title) {
+            tasks = await Task.find({ title: { $regex: title, $options: 'i' } })
+        } else {
+            tasks = await Task.find()
+        }
         
         if(!tasks) return res.status(404).json({ error: 'Error, no se encontraron tareas' })
+        
         res.json(tasks)
 
     } catch (error) {

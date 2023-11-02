@@ -51,6 +51,10 @@
     filter: invert(1);
 }
 
+.input-form[type="date"]:hover {
+    cursor: pointer;
+}
+
 .form-div {
     width: 100%;
     color: white;

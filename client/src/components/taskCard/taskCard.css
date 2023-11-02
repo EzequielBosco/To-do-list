@@ -32,6 +32,10 @@
     margin-top: 10px;
 }
 
+input[type="checkbox"]:hover {
+    cursor: pointer;
+}
+
 input[type="checkbox"]:not(:checked) {
     -webkit-appearance: none;
     appearance: none;
@@ -41,7 +45,6 @@ input[type="checkbox"]:not(:checked) {
     border-radius: 3px; 
     outline: none; 
     background-color: var(--color);
-    cursor: pointer;
     vertical-align: middle;
     display: flex;
     align-items: center;
